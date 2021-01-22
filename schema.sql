@@ -3,3 +3,5 @@ DROP DATABASE IF EXISTS project2_development;
 
 -- Creates the "project 2" database --
 CREATE DATABASE project2_development;
+
+USE project2_development;
