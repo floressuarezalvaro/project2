@@ -23,7 +23,10 @@ module.exports = (app) => {
 
   app.get("/api/user_info", (req, res) => {
     if (!req.user) {
-      res.json({});
+      res.json({
+        email: "No user email",
+        id: "No IDs",
+      });
     } else {
       res.json({
         email: req.user.email,
