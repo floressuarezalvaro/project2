@@ -13,6 +13,7 @@ app.use(express.static("public"));
 
 require("./routes/html-routes.js")(app);
 require("./routes/api-routes.js")(app);
+require("./routes/bars-routes.js")(app);
 
 db.sequelize.sync().then(() => {
   app.listen(PORT, HOST, () => {

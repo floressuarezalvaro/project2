@@ -1,14 +1,9 @@
-/* #left {
-    float: left;
-    width: 33.3%;
-}
+/* body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
 
-#middle {
-    float: left;
-    width: 33.3%;
-}
-
-#right {
-    float: left;
-    width: 33.3%;
-} */
+  main {
+    flex: 1 0 auto;
+  }
