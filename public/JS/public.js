@@ -74,10 +74,7 @@ let bannerFetch = function () {
       lat = data[0].latlng[0];
       lng = data[0].latlng[1];
 
-      capital = data[0].capital
-        .normalize("NFD")
-        .replace(/[\u0300-\u036f]/g, "");
-      weatherFetch();
+      barFetch();
       $("#map").empty();
       mapGen();
     });
@@ -86,7 +83,7 @@ let bannerFetch = function () {
 /**
  * weatherFetch fetches the weather for the capital city of the query country and calls weatherCards, a helper function to create the forecast cards.
  */
-let weatherFetch = function () {
+let barFetch = function () {
   fetch(
     `https://api.openweathermap.org/data/2.5/forecast?q=${capital}&units=imperial&appid=b8cf73639b0d81c1905ba1ac1cb6f289`
   )
