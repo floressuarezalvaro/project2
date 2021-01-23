@@ -25,19 +25,20 @@ $("form").on("submit", function (e) {
 
 
 let bannerFetch = function () {
-    .then((response) => {
-      if (response.status === 404) {
-        let err404 = $("<h1>");
-        let link = $("<a>");
-        link.text("Click here to go back");
-        err404.text("404: Bar not in database.");
-        err404.attr("style", "color: white;");
-        $("#main").empty();
-        $("#main").append(err404);
-        $("#main").append(link);
-      }
-      return response.json();
-    })
+    fetch()
+    // .then((response) => {
+    //   if (response.status === 404) {
+    //     let err404 = $("<h1>");
+    //     let link = $("<a>");
+    //     link.text("Click here to go back");
+    //     err404.text("404: Bar not in database.");
+    //     err404.attr("style", "color: white;");
+    //     $("#main").empty();
+    //     $("#main").append(err404);
+    //     $("#main").append(link);
+    //   }
+    //   return response.json();
+    // })
     .then((data) => {
       $("#city-name").empty();
       iconGen();
