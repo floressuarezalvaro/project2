@@ -10,18 +10,14 @@ module.exports = (app) => {
       where: {
         id: req.params.id,
       },
-    }).then((dbGetBar) => {
-      res.json(dbGetBar);
-    });
+    }).then((dbGetBar) => res.json(dbGetBar));
   });
 
   app.post("/api/bars/barName", (req, res) => {
     const barName = req.body.barName;
     db.Bar.create({
       barName,
-    })
-      .then((resBarName) => res.json(resBarName))
-      .catch((err) => res.json(err));
+    }).then((resBarName) => res.json(resBarName));
   });
 
   app.delete("/api/bars/:id", (req, res) => {
@@ -29,9 +25,7 @@ module.exports = (app) => {
       where: {
         id: req.params.id,
       },
-    }).then((dbDeleteBar) => {
-      res.json(dbDeleteBar);
-    });
+    }).then((dbDestroyBar) => res.json(dbDestroyBar));
   });
 
   app.put("/api/bars/:id", (req, res) => {
@@ -39,8 +33,6 @@ module.exports = (app) => {
       where: {
         id: req.params.id,
       },
-    }).then((dbUpdateBar) => {
-      res.json(dbUpdateBar);
-    });
+    }).then((dbUpdateBar) => res.json(dbUpdateBar));
   });
 };
