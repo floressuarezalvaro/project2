@@ -13,79 +13,90 @@
 </head>
 
 <body>
-    <!-- This is the navbar -->
+  <!-- This is the navbar -->
 
-    <nav>
-      <div class="nav-wrapper">
-        <a href="#!" class="brand-logo">Brewery Explorer</a>
-        <ul class="right hide-on-med-and-down">
-          <li><a href="sass.html"><i class="material-icons left">search</i>Link with Left Icon</a></li>
-          <li><a href="badges.html"><i class="material-icons right">view_module</i>Link with Right Icon</a></li>
-        </ul>
-      </div>
-    </nav>
-    <br>
-
-    <!-- This is the instructions container, toggled off once query is entered -->
-    <!-- <div class="container" id="instructions">
-        <div class="row">
-            <div class="col s12 m6 offset-m3">
-                <div class="card-panel teal">
-                    <h4 class="white-text">Instructions:</h4>
-                    <span class="white-text">
-                        Welcome to the Travel Almanac. Here you can search any country and learn its capital city,
-                        native language, currency, and more. We will also provide you with a 5 day weather forecast so
-                        that you may pack accordingly. To begin simply type the country of your liking into the search
-                        bar and go.
-                    </span>
-                </div>
-            </div>
-        </div>
-    </div> -->
-
-    <!-- This is the main body container, toggled on upon entry of query -->
-    <div class="container" id="main">
-        <div class="row">
-            <div class="card col push-sm4" style="margin-top: 20px; padding-top: 5px;">
-                <div class="card-image waves-effect waves-block waves-light">
-                    <img class="activator" id="nat-flag" src="">
-                </div>
-                <div class="card-content">
-                    <span class="card-title activator grey-text text-darken-4" id="country-name"></span>
-                </div>
-                <div class="card-reveal">
-                    <span class="card-title grey-text text-darken-4" id="country-name-inner"><i
-                            class="material-icons right">close</i></span>
-                    <p id="bar-name"></p>
-                    <p id="address"></p>
-                    <p id="city-name"></p>
-                    <p id="state"></p>
-                    <p id="review-link"></p>
-                    <p id="phone"></p>
-                    <p id="website"></p>
-                </div>
-            </div>
-
-            <div class="col pull-sm8">
-                <div id="map" class="map"></div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col sm8" style="margin-left: 10px; margin-top: -30px;">
-                <h5 id="capital-city" class="white-text"></h5>
-                <div class="row" id="bar-cards"></div>
-            </div>
-        </div>
-
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#!" class="brand-logo">Brewery Explorer</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="sass.html"><i class="material-icons left">search</i>Link with Left Icon</a></li>
+        <li><a href="badges.html"><i class="material-icons right">view_module</i>Link with Right Icon</a></li>
+      </ul>
     </div>
+  </nav>
+  <br>
 
-    <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.4.3/build/ol.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
-        integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-    <script src="/JS/search.js"></script>
+  <!-- This is the main body container, toggled on upon entry of query -->
+  <div class="container" id="main">
+      <div class="row">
+
+        <div class="col s12 m6">
+          <div class="card">
+
+            <div class="card-image">
+              <img src="images/sample-1.jpg">
+              <span class="card-title"></span>
+              <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">favorite</i></a>
+            </div>
+
+            <div class="card-content">
+              <p id="bar-name">bar name:</p>
+              <p id="address">address:</p>
+              <p id="city-name">city:</p>
+              <p id="state">state:</p>
+              <p id="review-link">reviews:</p>
+              <p id="phone">phone number:</p>
+              <p id="website">website:</p>
+            </div>
+
+            <div class="card-action">
+              <a href="#">More Details</a>
+              <a href="#">Get Directions</a>
+            </div>
+
+          </div>
+        </div>
+
+          <div class="card col push-sm4" style="margin-top: 20px; padding-top: 5px;">
+              <div class="card-image waves-effect waves-block waves-light">
+                  <img class="activator" id="nat-flag" src="">
+              </div>
+              <div class="card-content">
+                  <span class="card-title activator grey-text text-darken-4" id="country-name"></span>
+              </div>
+              <div class="card-reveal">
+                  <span class="card-title grey-text text-darken-4" id="country-name-inner"><i
+                          class="material-icons right">close</i></span>
+                  <p id="bar-name"></p>
+                  <p id="address"></p>
+                  <p id="city-name"></p>
+                  <p id="state"></p>
+                  <p id="review-link"></p>
+                  <p id="phone"></p>
+                  <p id="website"></p>
+              </div>
+          </div>
+
+          <div class="col pull-sm8">
+              <div id="map" class="map"></div>
+          </div>
+      </div>
+      <div class="row">
+          <div class="col sm8" style="margin-left: 10px; margin-top: -30px;">
+              <h5 id="capital-city" class="white-text"></h5>
+              <div class="row" id="bar-cards"></div>
+          </div>
+      </div>
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.4.3/build/ol.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+      integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+      crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+  <script src="/JS/search.js"></script>
 </body>
 
 </html>
