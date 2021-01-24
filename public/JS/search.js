@@ -1,21 +1,27 @@
 function fetchSearchLocation(queryString) {
-    if(!queryString || queryString.trim() === ""){return};
-    
-    fetch(`/api/searchLoc?query=${queryString}`, {
-        method: "GET",
-        headers: {
-        "Content-Type": "application/json",
-        // 'Content-Type': 'application/x-www-form-urlencoded',
-      },
+  if (!queryString || queryString.trim() === "") {
+    return;
+  }
 
-    })
-      .then((response) => response.json())
-      .then((data) => console.log(data));
+  fetch(`/api/searchLoc?query=${queryString}`, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+      // 'Content-Type': 'application/x-www-form-urlencoded',
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => console.log(data));
 }
 
-.on("submit", function(e){
-  // read values from user input
-  let input = document.getElementById("#userInput")
-  fetchSearchLocation(input);
-})
+// .on("submit", function(e){
+//   // read values from user input
+//   let input = document.getElementById("#userInput")
+//   fetchSearchLocation(input);
+// })
 
+// Card Modal Trigger for "More Details" on Explore Page
+
+$(document).ready(function () {
+  $(".modal").modal();
+});
