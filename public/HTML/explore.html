@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/CSS/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.4.3/css/ol.css" type="text/css">
+    <title>Travel Almanac</title>
+</head>
+
+<body>
+    <!-- This is the nav bar that doubles as a search bar -->
+    <nav>
+        <div class="nav-wrapper teal">
+            <form id="search">
+                <div class="input-field">
+                    <input type="search" id="search-bar" required>
+                    <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+                    <i class="material-icons">close</i>
+                </div>
+            </form>
+        </div>
+    </nav>
+
+    <!-- This is the instructions container, toggled off once query is entered -->
+    <!-- <div class="container" id="instructions">
+        <div class="row">
+            <div class="col s12 m6 offset-m3">
+                <div class="card-panel teal">
+                    <h4 class="white-text">Instructions:</h4>
+                    <span class="white-text">
+                        Welcome to the Travel Almanac. Here you can search any country and learn its capital city,
+                        native language, currency, and more. We will also provide you with a 5 day weather forecast so
+                        that you may pack accordingly. To begin simply type the country of your liking into the search
+                        bar and go.
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+    <!-- This is the main body container, toggled on upon entry of query -->
+    <div class="container" id="main">
+        <div class="row">
+            <div class="card col push-sm4" style="margin-top: 20px; padding-top: 5px;">
+                <div class="card-image waves-effect waves-block waves-light">
+                    <img class="activator" id="nat-flag" src="">
+                </div>
+                <div class="card-content">
+                    <span class="card-title activator grey-text text-darken-4" id="country-name"></span>
+                </div>
+                <div class="card-reveal">
+                    <span class="card-title grey-text text-darken-4" id="country-name-inner"><i
+                            class="material-icons right">close</i></span>
+                    <p id="bar-name"></p>
+                    <p id="address"></p>
+                    <p id="city-name"></p>
+                    <p id="state"></p>
+                    <p id="review-link"></p>
+                    <p id="phone"></p>
+                    <p id="website"></p>
+                </div>
+            </div>
+
+            <div class="col pull-sm8">
+                <div id="map" class="map"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col sm8" style="margin-left: 10px; margin-top: -30px;">
+                <h5 id="capital-city" class="white-text"></h5>
+                <div class="row" id="bar-cards"></div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.4.3/build/ol.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+        integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="/JS/search.js"></script>
+</body>
+
+</html>
