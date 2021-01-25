@@ -32,3 +32,5 @@ searchForm.addEventListener("submit", handleSearchFormSubmit);
 $(document).ready(function () {
   $(".modal").modal();
 });
+
+module.exports = searchFunction;
