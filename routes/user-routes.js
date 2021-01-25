@@ -37,4 +37,17 @@ module.exports = (app) => {
       });
     }
   });
+
+  app.get("/api/searchLoc", (req, res) => {
+    let searchLocation = req.query.query;
+    console.log(req.query);
+    axios
+      .get(
+        `http://beermapping.com/webservice/locquery/${process.env.apikey}/${searchLocation}&s=json`
+      )
+      .then((data) => {
+        console.log(data.data);
+        res.json(data.data);
+      });
+  });
 };
