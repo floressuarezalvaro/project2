@@ -14,11 +14,17 @@ function fetchSearchLocation(queryString) {
     .then((data) => console.log(data));
 }
 
-// .on("submit", function(e){
-//   // read values from user input
-//   let input = document.getElementById("#userInput")
-//   fetchSearchLocation(input);
-// })
+// fetchSearchLocation("ellis");
+
+$("form").on("submit", function (e) {
+  // read values from user input
+  e.preventDefault();
+  let input = JSON.stringify(document.getElementById("#search"));
+
+  console.log(input);
+
+  fetchSearchLocation(input);
+});
 
 // Card Modal Trigger for "More Details" on Explore Page
 
