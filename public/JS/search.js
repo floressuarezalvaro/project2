@@ -1,3 +1,5 @@
+let searchForm = document.querySelector("#search-form");
+
 function fetchSearchLocation(queryString) {
   if (!queryString || queryString.trim() === "") {
     return;
@@ -14,17 +16,16 @@ function fetchSearchLocation(queryString) {
     .then((data) => console.log(data));
 }
 
-// fetchSearchLocation("ellis");
-
-$("form").on("submit", function (e) {
-  // read values from user input
+function handleSearchFormSubmit(e) {
   e.preventDefault();
-  let input = JSON.stringify(document.getElementById("#search"));
+  let input = document.querySelector("#search").value;
 
   console.log(input);
 
   fetchSearchLocation(input);
-});
+}
+
+searchForm.addEventListener("submit", handleSearchFormSubmit);
 
 // Card Modal Trigger for "More Details" on Explore Page
 
