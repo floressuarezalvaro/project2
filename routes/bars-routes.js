@@ -17,6 +17,7 @@ module.exports = (app) => {
     const barName = req.body.barName;
     db.Bar.create({
       barName,
+      UserId: req.body.UserId,
     }).then((resBarName) => res.json(resBarName));
   });
 
