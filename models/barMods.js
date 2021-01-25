@@ -8,6 +8,19 @@ module.exports = (sequelize, DataTypes) => {
       },
       defaultValue: sequelize.NOW,
     },
+    UserId: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
   });
+
+  Bar.associate = (models) => {
+    Bar.belongsTo(models.User, {
+      foreignKey: {
+        allowNull: false,
+      },
+    });
+  };
+
   return Bar;
 };
