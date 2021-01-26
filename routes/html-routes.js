@@ -22,8 +22,8 @@ module.exports = (app) => {
   app.get("/explore", (req, res) => {
     res.sendFile(path.join(__dirname, "../public/HTML/explore.html"));
   });
-  // map route loads map.html
-  app.get("/map", (req, res) => {
-    res.sendFile(path.join(__dirname, "../public/HTML/map.html"));
+//search with out modals
+  app.get("/search", (req, res) => {
+    res.sendFile(path.join(__dirname, "../public/HTML/search.html"));
   });
 };

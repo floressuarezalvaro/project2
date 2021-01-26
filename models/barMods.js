@@ -1,13 +1,26 @@
 module.exports = (sequelize, DataTypes) => {
-  const GET = sequelize.define("GET", {
+  const Bar = sequelize.define("Bar", {
     barName: {
       type: DataTypes.TEXT,
       allowNull: false,
-      //   validate: {
-      //     len: [1],
-      //   },
+      validate: {
+        len: [1],
+      },
       defaultValue: sequelize.NOW,
     },
+    UserId: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
   });
-  return GET;
+
+  Bar.associate = (models) => {
+    Bar.belongsTo(models.User, {
+      foreignKey: {
+        allowNull: false,
+      },
+    });
+  };
+
+  return Bar;
 };
