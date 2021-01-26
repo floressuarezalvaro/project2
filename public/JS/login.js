@@ -12,6 +12,7 @@ $(document).ready(function () {
       password: passwordInput.val().trim(),
     };
 
+    console.log("hello");
     if (!userData.email || !userData.password) {
       return;
     }
