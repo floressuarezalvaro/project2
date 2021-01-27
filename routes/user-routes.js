@@ -8,6 +8,7 @@ module.exports = (app) => {
     "/api/users/login",
     passport.authenticate("local"),
     function (req, res) {
+      console.log(req.user)
       res.json(req.user);
     }
   );
