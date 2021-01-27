@@ -29,7 +29,7 @@ $(document).ready(function () {
       password: password,
     })
       .then(function (data) {
-        window.location.replace("../HTML/explore.html");
+        window.location.replace("/HTML/index.html");
         // If there's an error, handle it by throwing up a bootstrap alert
       })
       .catch(handleLoginErr);
