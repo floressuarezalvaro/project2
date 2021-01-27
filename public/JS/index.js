@@ -2,11 +2,7 @@ let searchForm = document.querySelector("#search-form");
 
 let searchResult = [];
 
-function fetchSearchLocation(queryString) {
-  if (!queryString || queryString.trim() === "") {
-    return;
-  }
-
+function fetchAllBars(event) {
   fetch(`/api/bars`, {
     method: "GET",
     headers: {
@@ -25,9 +21,11 @@ function fetchSearchLocation(queryString) {
         let col = $("<div>").addClass("col s12 m4 l4");
         let card = $("<div>").addClass("card");
         let body = $("<div>").addClass("card-content");
-        let btn = $("<a>").addClass(
-          "btn-floating halfway-fab waves-effect waves-light red"
-        );
+        let btn = $("<a>")
+          .addClass(
+            "btn-floating halfway-fab waves-effect waves-light red delete-btn"
+          )
+          .attr("button-id", i);
         let name = $("<p>").addClass("#bar-name").text(data[i].barName);
         let city = $("<p>")
           .addClass("#city-name")
@@ -67,51 +65,33 @@ $(document).ready(function () {
   $("#modal1").modal();
 
   $(document).on("click", ".modal-trigger", function (e) {
-    // $("#modal1").modal();
     let index = e.currentTarget.getAttribute("data-id");
     modalInfo(index);
   });
 });
 
-//  let modalContent = $("<div>").addClass(".modal-content");
-//  let h4 = $("<h4>").text("Popular Brewery Info");
-//  let p1 = $("<p>")
-//    .addClass("#bar-name")
-//    .text("Name: ");// + data[i].name);
-//  let p2 = $("<p>")
-//    .addClass("#address")
-//    .text("Address: "); // + data[i].street);
-//  let p3 = $("<p>")
-//    .addClass("#city-name")
-//    .text("City: ");// + data[i].city);
-//  let p4 = $("<p>")
-//    .addClass("#state")
-//    .text("State: "); // + data[i].state);
-//  let p5 = $("<p>")
-//    .addClass("#review-link")
-//    .text("Reviews: "); // + data[i].reviewlink);
-//  let p6 = $("<p>")
-//    .addClass("#phone")
-//    .text("Phone Number: "); // + data[i].phone);
-//  let p7 = $("<p>")
-//    .addClass("#website")
-//    .text("Website: "); // + data[i].url);
-
-//    modal1.append(modalContent, h4, p1, p2, p3, p4, p5, p6, p7);
-
-function handleSearchFormSubmit(e) {
-  e.preventDefault();
-  let input = document.querySelector("#search").value;
-
-  console.log(input);
-
-  fetchSearchLocation(input);
-}
-
-searchForm.addEventListener("submit", handleSearchFormSubmit);
-
-// Card Modal Trigger for "More Details" on Explore Page
-
-// $(document).ready(function () {
-//   $(".modal").modal();
+// $(document).on("click", ".delete-btn", function (e) {
+//   let index = e.currentTarget.getAttribute("id");
+//   let barId = $(e.id);
+//   console.log(barId);
+//   // deletePost(barId);
 // });
+
+// function handleSearchFormSubmit(e) {
+//   e.preventDefault();
+//   let input = document.querySelector("#allBars");
+//   fetchAllBars(input);
+// }
+
+searchForm.addEventListener("click", fetchAllBars());
+
+// const deletePost = (e) => {
+// const { id } =
+//   fetch(`/api/bars/${id}`, {
+//     method: "DELETE",
+//     headers: {
+//       "Content-Type": "application/json",
+//       // 'Content-Type': 'application/x-www-form-urlencoded',
+//     },
+//   }).then((response) => response.json("deleted"));
+// };

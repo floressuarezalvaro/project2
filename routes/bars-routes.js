@@ -37,10 +37,10 @@ module.exports = (app) => {
     }).then((dbDestroyBar) => res.json(dbDestroyBar));
   });
 
-  app.put("/api/bars/:id", (req, res) => {
+  app.put("/api/bars/update", (req, res) => {
     db.Bar.update(req.body, {
       where: {
-        id: req.params.id,
+        id: req.body.id,
       },
     }).then((dbUpdateBar) => res.json(dbUpdateBar));
   });
