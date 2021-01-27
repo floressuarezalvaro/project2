@@ -52,6 +52,7 @@ function fetchAllBars(event) {
 // let modal1 = $("div.modal")
 
 function modalInfo(index) {
+  $("#barId").text(`Id: ${searchResult[index].id}`);
   $("#bar-name").text(`Bar Name: ${searchResult[index].barName}`);
   $("#address").text(`Address: ${searchResult[index].barAddress}`);
   $("#city-name").text(`City: ${searchResult[index].barCity}`);
