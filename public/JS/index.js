@@ -2,11 +2,7 @@ let searchForm = document.querySelector("#search-form");
 
 let searchResult = [];
 
-function fetchSearchLocation(queryString) {
-  if (!queryString || queryString.trim() === "") {
-    return;
-  }
-
+function fetchAllBars(event) {
   fetch(`/api/bars`, {
     method: "GET",
     headers: {
@@ -74,18 +70,28 @@ $(document).ready(function () {
   });
 });
 
-$(document).on("click", ".delete-btn", function (e) {
-  let index = e.currentTarget.getAttribute("button-id");
-  console.log(index);
-});
+// $(document).on("click", ".delete-btn", function (e) {
+//   let index = e.currentTarget.getAttribute("id");
+//   let barId = $(e.id);
+//   console.log(barId);
+//   // deletePost(barId);
+// });
 
-function handleSearchFormSubmit(e) {
-  e.preventDefault();
-  let input = document.querySelector("#search").value;
+// function handleSearchFormSubmit(e) {
+//   e.preventDefault();
+//   let input = document.querySelector("#allBars");
+//   fetchAllBars(input);
+// }
 
-  console.log(input);
+searchForm.addEventListener("click", fetchAllBars());
 
-  fetchSearchLocation(input);
-}
-
-searchForm.addEventListener("submit", handleSearchFormSubmit);
+// const deletePost = (e) => {
+// const { id } =
+//   fetch(`/api/bars/${id}`, {
+//     method: "DELETE",
+//     headers: {
+//       "Content-Type": "application/json",
+//       // 'Content-Type': 'application/x-www-form-urlencoded',
+//     },
+//   }).then((response) => response.json("deleted"));
+// };
