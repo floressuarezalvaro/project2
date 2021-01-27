@@ -7,7 +7,7 @@ function fetchSearchLocation(queryString) {
     return;
   }
 
-  fetch(`/api/searchLoc?query=${queryString}`, {
+  fetch(`/api/bars`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
@@ -28,13 +28,13 @@ function fetchSearchLocation(queryString) {
         let btn = $("<a>").addClass(
           "btn-floating halfway-fab waves-effect waves-light red"
         );
-        let name = $("<p>").addClass("#bar-name").text(data[i].name);
+        let name = $("<p>").addClass("#bar-name").text(data[i].barName);
         let city = $("<p>")
           .addClass("#city-name")
-          .text("City: " + data[i].city);
+          .text("City: " + data[i].barCity);
         let state = $("<p>")
           .addClass("#state")
-          .text("State: " + data[i].state);
+          .text("State: " + data[i].barState);
         let action = $("<div>").addClass("card-action");
         let modal = $("<a>")
           .addClass("waves-effect waves-light btn modal-trigger")
