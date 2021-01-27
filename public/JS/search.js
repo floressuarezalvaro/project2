@@ -1,6 +1,6 @@
 let searchForm = document.querySelector("#search-form");
 
-let searchResult = []
+let searchResult = [];
 
 function fetchSearchLocation(queryString) {
   if (!queryString || queryString.trim() === "") {
@@ -21,7 +21,7 @@ function fetchSearchLocation(queryString) {
       $("#barList").empty();
       for (let i = 0; i < data.length; i++) {
         //create barCards here
-        
+
         let col = $("<div>").addClass("col s12 m4 l4");
         let card = $("<div>").addClass("card");
         let body = $("<div>").addClass("card-content");
@@ -35,33 +35,28 @@ function fetchSearchLocation(queryString) {
         let state = $("<p>")
           .addClass("#state")
           .text("State: " + data[i].state);
-          let action = $("<div>").addClass("card-action");
-let modal = $("<a>")
-  .addClass("waves-effect waves-light btn modal-trigger")
-  .attr('data-id', i)
-  .attr("href", "#modal1")
-  .text("More Details");
-        
+        let action = $("<div>").addClass("card-action");
+        let modal = $("<a>")
+          .addClass("waves-effect waves-light btn modal-trigger")
+          .attr("data-id", i)
+          .attr("href", "#modal1")
+          .text("More Details");
 
         // merge together and put on page
-        
-          col.append(
-            card.append(body.append(btn, name, city, state, action, modal)
-          )
+
+        col.append(
+          card.append(body.append(btn, name, city, state, action, modal))
         );
         $("#barList").append(col);
-
-        
       }
     });
 }
 // let modal1 = $("div.modal")
 
 function modalInfo(index) {
-
   $("#bar-name").text(`Bar Name: ${searchResult[index].name}`);
   $("#address").text(`Address: ${searchResult[index].street}`);
-  $("#city").text(`City: ${searchResult[index].city}`);
+  $("#city-name").text(`City: ${searchResult[index].city}`);
   $("#state").text(`State: ${searchResult[index].state}`);
   $("#review-link").text(`Review Link: ${searchResult[index].reviewlink}`);
   $("#phone").text(`Phone Number: ${searchResult[index].phone}`);
@@ -70,11 +65,11 @@ function modalInfo(index) {
 
 $(document).ready(function () {
   $("#modal1").modal();
- 
-  $(document).on("click", ".modal-trigger", function(e) {
+
+  $(document).on("click", ".modal-trigger", function (e) {
     // $("#modal1").modal();
     let index = e.currentTarget.getAttribute("data-id");
-    modalInfo(index)
+    modalInfo(index);
   });
 });
 
@@ -102,9 +97,7 @@ $(document).ready(function () {
 //    .addClass("#website")
 //    .text("Website: "); // + data[i].url);
 
-
 //    modal1.append(modalContent, h4, p1, p2, p3, p4, p5, p6, p7);
-
 
 function handleSearchFormSubmit(e) {
   e.preventDefault();
@@ -122,5 +115,3 @@ searchForm.addEventListener("submit", handleSearchFormSubmit);
 // $(document).ready(function () {
 //   $(".modal").modal();
 // });
-
-

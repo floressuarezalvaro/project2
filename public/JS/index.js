@@ -54,13 +54,13 @@ function fetchSearchLocation(queryString) {
 // let modal1 = $("div.modal")
 
 function modalInfo(index) {
-  $("#bar-name").text(`Bar Name: ${searchResult[index].name}`);
-  $("#address").text(`Address: ${searchResult[index].street}`);
-  $("#city").text(`City: ${searchResult[index].city}`);
-  $("#state").text(`State: ${searchResult[index].state}`);
-  $("#review-link").text(`Review Link: ${searchResult[index].reviewlink}`);
-  $("#phone").text(`Phone Number: ${searchResult[index].phone}`);
-  $("#website").text(`Website: ${searchResult[index].url}`);
+  $("#bar-name").text(`Bar Name: ${searchResult[index].barName}`);
+  $("#address").text(`Address: ${searchResult[index].barAddress}`);
+  $("#city-name").text(`City: ${searchResult[index].barCity}`);
+  $("#state").text(`State: ${searchResult[index].barState}`);
+  $("#review-link").text(`Review Link: ${searchResult[index].barReviewLink}`);
+  $("#phone").text(`Phone Number: ${searchResult[index].barPhone}`);
+  $("#website").text(`Website: ${searchResult[index].barWebsite}`);
 }
 
 $(document).ready(function () {
