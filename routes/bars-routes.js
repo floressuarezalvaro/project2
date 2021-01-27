@@ -14,13 +14,18 @@ module.exports = (app) => {
   });
 
   app.post("/api/bars/barName", auth, (req, res) => {
-    console.log(req.session);
-    console.log(req.user);
     const barName = req.body.barName;
     const UserId = req.body.UserId;
     db.Bar.create({
       barName,
+      barRating: req.body.barRating,
       UserId: req.user.id,
+      barAddress: req.body.barAddress,
+      barCity: req.body.barCity,
+      barState: req.body.barState,
+      barReviewLink: req.body.barReviewLink,
+      barPhone: req.body.barPhone,
+      barWebsite: req.body.barWebsite,
     }).then((resBarName) => res.json(resBarName));
   });
 
