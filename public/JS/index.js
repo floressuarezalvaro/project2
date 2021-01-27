@@ -7,7 +7,7 @@ function fetchSearchLocation(queryString) {
     return;
   }
 
-  fetch(`/api/searchLoc?query=${queryString}`, {
+  fetch(`/api/bars`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
@@ -28,13 +28,13 @@ function fetchSearchLocation(queryString) {
         let btn = $("<a>").addClass(
           "btn-floating halfway-fab waves-effect waves-light red"
         );
-        let name = $("<p>").addClass("#bar-name").text(data[i].name);
+        let name = $("<p>").addClass("#bar-name").text(data[i].barName);
         let city = $("<p>")
           .addClass("#city-name")
-          .text("City: " + data[i].city);
+          .text("City: " + data[i].barCity);
         let state = $("<p>")
           .addClass("#state")
-          .text("State: " + data[i].state);
+          .text("State: " + data[i].barState);
         let action = $("<div>").addClass("card-action");
         let modal = $("<a>")
           .addClass("waves-effect waves-light btn modal-trigger")
@@ -54,13 +54,13 @@ function fetchSearchLocation(queryString) {
 // let modal1 = $("div.modal")
 
 function modalInfo(index) {
-  $("#bar-name").text(`Bar Name: ${searchResult[index].name}`);
-  $("#address").text(`Address: ${searchResult[index].street}`);
-  $("#city-name").text(`City: ${searchResult[index].city}`);
-  $("#state").text(`State: ${searchResult[index].state}`);
-  $("#review-link").text(`Review Link: ${searchResult[index].reviewlink}`);
-  $("#phone").text(`Phone Number: ${searchResult[index].phone}`);
-  $("#website").text(`Website: ${searchResult[index].url}`);
+  $("#bar-name").text(`Bar Name: ${searchResult[index].barName}`);
+  $("#address").text(`Address: ${searchResult[index].barAddress}`);
+  $("#city-name").text(`City: ${searchResult[index].barCity}`);
+  $("#state").text(`State: ${searchResult[index].barState}`);
+  $("#review-link").text(`Review Link: ${searchResult[index].barReviewLink}`);
+  $("#phone").text(`Phone Number: ${searchResult[index].barPhone}`);
+  $("#website").text(`Website: ${searchResult[index].barWebsite}`);
 }
 
 $(document).ready(function () {
