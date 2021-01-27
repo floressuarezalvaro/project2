@@ -31,30 +31,83 @@
     <div class="container">
       <div class="row">
         <div class="col-md-6 col-md-offset-3">
-          <h2>Add Bars</h2>
-          <form class="login">
+          <h2>Add Bar</h2>
+          <form class="addBarForm">
             <div class="form-group">
-              <label for="exampleInputEmail1">Email address</label>
+              <label for="barNameInput">Bar Name</label>
               <input
-                type="email"
+                type="barName"
                 class="form-control"
-                id="email-input"
-                placeholder="Email"
+                id="barName-input"
+                placeholder="required"
               />
             </div>
             <div class="form-group">
-              <label for="exampleInputPassword1">Password</label>
+              <label for="barRatingInput">Bar Rating (1-10)</label>
               <input
-                type="password"
+                type="barRating"
                 class="form-control"
-                id="password-input"
-                placeholder="Password"
+                id="barRating-input"
+                placeholder="required"
               />
             </div>
-            <button type="submit" class="btn btn-default">Login</button>
+            <div class="form-group">
+              <label for="barAddressInput">Bar Street Address</label>
+              <input
+                type="barAddress"
+                class="form-control"
+                id="barAddress-input"
+                placeholder="required"
+              />
+            </div>
+            <div class="form-group">
+              <label for="barCityInput">Bar City</label>
+              <input
+                type="barCity"
+                class="form-control"
+                id="barCity-input"
+                placeholder="required"
+              />
+            </div>
+            <div class="form-group">
+              <label for="barStateInput">Bar State</label>
+              <input
+                type="barState"
+                class="form-control"
+                id="barState-input"
+                placeholder="required"
+              />
+            </div>
+            <div class="form-group">
+              <label for="barReviewLink">Bar Review Link</label>
+              <input
+                type="barReviewLink"
+                class="form-control"
+                id="barReviewLink-input"
+                placeholder=""
+              />
+            </div>
+            <div class="form-group">
+              <label for="barStateInput">Bar Phone Number</label>
+              <input
+                type="barPhone"
+                class="form-control"
+                id="barPhone-input"
+                placeholder=""
+              />
+            </div>
+            <div class="form-group">
+              <label for="barStateInput">Bar Website</label>
+              <input
+                type="barWebsite"
+                class="form-control"
+                id="barWebsite-input"
+                placeholder=""
+              />
+            </div>
+            <button type="submit" class="btn btn-default">Add Bar</button>
           </form>
           <br />
-          <p>Or sign up <a href="/signup">here</a></p>
         </div>
       </div>
     </div>
