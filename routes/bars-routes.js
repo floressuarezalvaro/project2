@@ -1,5 +1,5 @@
 var db = require("../models");
-
+var auth = require("../config/middleware/isAuthentication");
 module.exports = (app) => {
   app.get("/api/bars", (req, res) => {
     db.Bar.findAll({}).then((dbGetAll) => res.json(dbGetAll));
@@ -13,11 +13,14 @@ module.exports = (app) => {
     }).then((dbGetBar) => res.json(dbGetBar));
   });
 
-  app.post("/api/bars/barName", (req, res) => {
+  app.post("/api/bars/barName", auth, (req, res) => {
+    console.log(req.session);
+    console.log(req.user);
     const barName = req.body.barName;
+    const UserId = req.body.UserId;
     db.Bar.create({
       barName,
-      UserId: req.body.UserId,
+      UserId: req.user.id,
     }).then((resBarName) => res.json(resBarName));
   });
 
