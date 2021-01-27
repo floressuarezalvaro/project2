@@ -26,4 +26,8 @@ module.exports = (app) => {
   app.get("/search", (req, res) => {
     res.sendFile(path.join(__dirname, "../public/HTML/search.html"));
   });
+
+  app.get("/addBar", (req, res) => {
+    res.sendFile(path.join(__dirname, "../public/HTML/addBar.html"));
+  });
 };
