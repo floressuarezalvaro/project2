@@ -14,10 +14,12 @@ module.exports = (app) => {
   });
 
   app.post("/api/bars/barName", (req, res) => {
+    console.log(req.session)
+    console.log(req.user)
     const barName = req.body.barName;
     db.Bar.create({
       barName,
-      UserId: req.body.UserId,
+      username: req.user,
     }).then((resBarName) => res.json(resBarName));
   });
 
