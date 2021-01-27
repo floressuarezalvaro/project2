@@ -13,8 +13,48 @@ document.addEventListener("DOMContentLoaded", (e) => {
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    console.log("You hit submit");
+    if (
+      !barNameInput.value ||
+      !barRatingInput.value ||
+      !barAddressInput.value ||
+      !barCityInput.value ||
+      !barStateInput.value ||
+      !barAddressInput.value
+    ) {
+      alert("Your post is missing some content");
+    }
+
+    const newBar = {
+      barName: barNameInput.value.trim(),
+      barRating: barRatingInput.value.trim(),
+      barAddress: barAddressInput.value.trim(),
+      barCity: barCityInput.value.trim(),
+      barState: barStateInput.value.trim(),
+      barReviewLink: barReviewLinkInput.value.trim(),
+      barPhone: barPhoneInput.value.trim(),
+      barWebsite: barWebsiteInput.value.trim(),
+    };
+    console.log("handleFormSubmit -> newBar", newBar);
+    submitBar(newBar);
   };
 
   barForm.addEventListener("submit", handleFormSubmit);
+
+  const submitBar = (post) => {
+    fetch("/api/bars/barName", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(post),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("Success in submitting post:", data);
+        window.location.href = "/index";
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
+  };
 });
