@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>User Login</title>
+    <title>Brewery Explorer - Delete bar</title>
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
@@ -31,35 +31,24 @@
     <div class="container">
       <div class="row">
         <div class="col-md-6 col-md-offset-3">
-          <h2>Login Form</h2>
-          <form class="login">
+          <h2>Delete Bar</h2>
+          <form class="form-group" id="addBarForm">
             <div class="form-group">
-              <label for="exampleInputEmail1">Email address</label>
+              <label for="barId">Id</label>
               <input
-                type="email"
+                type="barId"
                 class="form-control"
-                id="email-input"
-                placeholder="Email"
+                id="barId-input"
+                placeholder="required"
               />
-            </div>
-            <div class="form-group">
-              <label for="exampleInputPassword1">Password</label>
-              <input
-                type="password"
-                class="form-control"
-                id="password-input"
-                placeholder="Password"
-              />
-            </div>
-            <button type="submit" class="btn btn-default">Login</button>
+            <button type="submit" class="btn btn-default">Delete Bar</button>
           </form>
           <br />
-          <p>Or sign up <a href="/signup">here</a></p>
         </div>
       </div>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript" src="/JS/login.js"></script>
+    <script type="text/javascript" src="/JS/deleteBar.js"></script>
   </body>
 </html>
