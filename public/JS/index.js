@@ -47,7 +47,6 @@ function fetchAllBars(event) {
       }
     });
 }
-// let modal1 = $("div.modal")
 
 function modalInfo(index) {
   $("#bar-name").text(`Bar Name: ${searchResult[index].barName}`);
@@ -69,28 +68,4 @@ $(document).ready(function () {
   });
 });
 
-// $(document).on("click", ".delete-btn", function (e) {
-//   let index = e.currentTarget.getAttribute("id");
-//   let barId = $(e.id);
-//   console.log(barId);
-//   // deletePost(barId);
-// });
-
-// function handleSearchFormSubmit(e) {
-//   e.preventDefault();
-//   let input = document.querySelector("#allBars");
-//   fetchAllBars(input);
-// }
-
-searchForm.addEventListener("click", fetchAllBars());
-
-// const deletePost = (e) => {
-// const { id } =
-//   fetch(`/api/bars/${id}`, {
-//     method: "DELETE",
-//     headers: {
-//       "Content-Type": "application/json",
-//       // 'Content-Type': 'application/x-www-form-urlencoded',
-//     },
-//   }).then((response) => response.json("deleted"));
-// };
+fetchAllBars();
