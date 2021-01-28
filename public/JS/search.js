@@ -42,7 +42,7 @@ function fetchSearchLocation(queryString) {
         // merge together and put on page
 
         col.append(
-          card.append(body.append(btn, name, city, state, action, modal))
+          card.append(body.append(name, city, state, action, modal))
         );
         $("#barList").append(col);
       }
