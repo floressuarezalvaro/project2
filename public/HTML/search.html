@@ -22,7 +22,7 @@
     
   </head>
 
-  <body class="grey lighten-1">
+  <body">
     <!-- This is the navbar -->
     
     <nav>
@@ -30,11 +30,28 @@
         <div class="container">
           <div class="row">
             <div class="col s6 m6 l6">
-              <img href="./index" src="../Assets/images/Brewery Explorer_navbar.png"></img>
+              <a href="./index">
+                <img src="../Assets/images/Brewery Explorer_navbar.png"></img>
+              </a>
             </div>
             <div class="col s3 m3 l3">
+
+              <!-- Dropdown Trigger -->
+              <a class='dropdown-trigger btn btn-flat grey darken-4 white-text' href='#' style="position: absolute; right: 10px;" data-target='dropdown1'>
+                <i class="large material-icons">menu</i>
+              </a>
+
+              <!-- Dropdown Structure -->
+              <ul id='dropdown1' class='dropdown-content grey darken-4'>
+                <li><a href="/index" class="amber-text">My Breweries</a></li>
+                <li><a href="/signup" class="amber-text">Sign Up</a></li>
+              </ul>
+
+            </div>
+
+            <div class="col s3 m3 l3">
               <form id="search-form">
-                <div class="input-field">
+                <div class="input-field" style="align-items: right; top: 5%;">
                   <input id="search" type="search" required />
                   <label class="label-icon" for="search"
                     ><i class="material-icons">search</i></label
@@ -43,10 +60,8 @@
                 </div>
               </form>
             </div>
-            <ul id="nav-mobile" class="right hide-on-med-and-down">
-              <li><a href="/index">My Breweries</a></li>
-              <li><a href="/signup">Sign Up</a></li>
-            </ul>
+              
+            
           </div>
         </div>
       </div>

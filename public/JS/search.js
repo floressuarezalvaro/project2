@@ -43,9 +43,7 @@ function fetchSearchLocation(queryString) {
 
         // merge together and put on page
 
-        col.append(
-          card.append(body.append(name, city, state, action, modal))
-        );
+        col.append(card.append(body.append(name, city, state, action, modal)));
         $("#barList").append(col);
       }
     });

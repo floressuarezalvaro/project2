@@ -19,8 +19,8 @@ function fetchAllBars(event) {
         //create barCards here
 
         let col = $("<div>").addClass("col s12 m4 l4");
-        let card = $("<div>").addClass("card");
-        let body = $("<div>").addClass("card-content");
+        let card = $("<div>").addClass("card grey lighten-5");
+        let body = $("<div>").addClass("card-content grey-text");
         let name = $("<h5>").addClass("#bar-name").text(data[i].barName);
         let id = $("<p>")
           .addClass("#barId")
@@ -33,7 +33,9 @@ function fetchAllBars(event) {
           .text("State: " + data[i].barState);
         let action = $("<div>").addClass("card-action");
         let modal = $("<a>")
-          .addClass("waves-effect waves-light btn modal-trigger")
+          .addClass(
+            "waves-effect waves-light btn modal-trigger amber-text grey darken-3"
+          )
           .attr("data-id", i)
           .attr("href", "#modal1")
           .text("More Details");
@@ -69,3 +71,5 @@ $(document).ready(function () {
 });
 
 fetchAllBars();
+
+$(".dropdown-trigger").dropdown();

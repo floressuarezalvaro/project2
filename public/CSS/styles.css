@@ -17,6 +17,8 @@ main {
 }
 
 body {
-  background-image: url("../Assets/images/genericbeer\ copy.png");
+  background-color: #212121;
+  background-image: url("../Assets/images/genericbeer.png");
   background-size: cover;
+  background-repeat: no-repeat;
 }
