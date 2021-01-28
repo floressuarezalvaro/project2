@@ -21,14 +21,10 @@ function fetchAllBars(event) {
         let col = $("<div>").addClass("col s12 m4 l4");
         let card = $("<div>").addClass("card");
         let body = $("<div>").addClass("card-content");
-<<<<<<< HEAD
-        let name = $("<p>").addClass("#bar-name").text(data[i].barName);
-=======
-        let name = $("<h4>").addClass("#bar-name").text(data[i].barName);
+        let name = $("<h5>").addClass("#bar-name").text(data[i].barName);
         let id = $("<p>")
           .addClass("#barId")
-          .text("Bar ID: " + data[i].id);
->>>>>>> dccc27967f529e6ebc0885835e4911fd7b12e661
+          .text("Id: " + data[i].id);
         let city = $("<p>")
           .addClass("#city-name")
           .text("City: " + data[i].barCity);
@@ -45,11 +41,7 @@ function fetchAllBars(event) {
         // merge together and put on page
 
         col.append(
-<<<<<<< HEAD
-          card.append(body.append(name, city, state, action, modal))
-=======
           card.append(body.append(name, id, city, state, action, modal))
->>>>>>> dccc27967f529e6ebc0885835e4911fd7b12e661
         );
         $("#barList").append(col);
       }
