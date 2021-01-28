@@ -21,11 +21,6 @@ function fetchAllBars(event) {
         let col = $("<div>").addClass("col s12 m4 l4");
         let card = $("<div>").addClass("card");
         let body = $("<div>").addClass("card-content");
-        let btn = $("<a>")
-          .addClass(
-            "btn-floating halfway-fab waves-effect waves-light red delete-btn"
-          )
-          .attr("button-id", i);
         let name = $("<p>").addClass("#bar-name").text(data[i].barName);
         let city = $("<p>")
           .addClass("#city-name")

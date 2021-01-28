@@ -25,9 +25,6 @@ function fetchSearchLocation(queryString) {
         let col = $("<div>").addClass("col s12 m4 l4");
         let card = $("<div>").addClass("card");
         let body = $("<div>").addClass("card-content");
-        let btn = $("<a>").addClass(
-          "btn-floating halfway-fab waves-effect waves-light red"
-        );
         let name = $("<p>").addClass("#bar-name").text(data[i].name);
         let city = $("<p>")
           .addClass("#city-name")
