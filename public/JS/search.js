@@ -25,9 +25,6 @@ function fetchSearchLocation(queryString) {
         let col = $("<div>").addClass("col s12 m4 l4");
         let card = $("<div>").addClass("card grey lighten-5");
         let body = $("<div>").addClass("card-content grey-text");
-        let btn = $("<a>").addClass(
-          "btn-floating halfway-fab waves-effect waves-light red"
-        );
         let name = $("<p>").addClass("#bar-name").text(data[i].name);
         let city = $("<p>")
           .addClass("#city-name")
@@ -47,7 +44,7 @@ function fetchSearchLocation(queryString) {
         // merge together and put on page
 
         col.append(
-          card.append(body.append(btn, name, city, state, action, modal))
+          card.append(body.append(name, city, state, action, modal))
         );
         $("#barList").append(col);
       }
@@ -74,32 +71,6 @@ $(document).ready(function () {
     modalInfo(index);
   });
 });
-
-//  let modalContent = $("<div>").addClass(".modal-content");
-//  let h4 = $("<h4>").text("Popular Brewery Info");
-//  let p1 = $("<p>")
-//    .addClass("#bar-name")
-//    .text("Name: ");// + data[i].name);
-//  let p2 = $("<p>")
-//    .addClass("#address")
-//    .text("Address: "); // + data[i].street);
-//  let p3 = $("<p>")
-//    .addClass("#city-name")
-//    .text("City: ");// + data[i].city);
-//  let p4 = $("<p>")
-//    .addClass("#state")
-//    .text("State: "); // + data[i].state);
-//  let p5 = $("<p>")
-//    .addClass("#review-link")
-//    .text("Reviews: "); // + data[i].reviewlink);
-//  let p6 = $("<p>")
-//    .addClass("#phone")
-//    .text("Phone Number: "); // + data[i].phone);
-//  let p7 = $("<p>")
-//    .addClass("#website")
-//    .text("Website: "); // + data[i].url);
-
-//    modal1.append(modalContent, h4, p1, p2, p3, p4, p5, p6, p7);
 
 function handleSearchFormSubmit(e) {
   e.preventDefault();
