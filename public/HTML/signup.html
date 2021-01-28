@@ -18,18 +18,43 @@
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.4.3/css/ol.css"
+      type="text/css"
+    />
+    
     <link rel="stylesheet" href="../CSS/styles.css" />
   </head>
 
   <body>
+
     <nav>
-      <div class="nav-wrapper #ffca28 amber lighten-1">
+      <div class="nav-wrapper grey darken-4">
         <div class="container">
           <div class="row">
             <div class="col s6 m6 l6">
-              <a href="#! ./index" class="brand-logo">Brewery Explorer</a>
+              <a href="./index">
+                <img src="../Assets/images/Brewery Explorer_navbar.png"></img>
+              </a>
             </div>
+            
+          </div>
+        </div>
+      </div>
+    </nav>
+    <br />
+
+    <!-- <nav>
+      <div class="nav-wrapper grey darken-4">
+        <div class="container">
+          <div class="row">
             <div class="col s6 m6 l6">
+              <a href="./index">
+                <img src="../Assets/images/Brewery Explorer_navbar.png"></img>
+              </a>
+            </div>
+            <div class="col s3 m3 l3">
               <ul id="nav-mobile" class="right hide-on-med-and-down">
                 <li><a href="./search">Search by City</a></li>
                 <li><a href="./index">My Breweries</a></li>
@@ -39,16 +64,18 @@
         </div>
       </div>
     </nav>
+    <br /> -->
+
     <div class="container">
       <div class="row">
-        <div class="col-md-6 col-md-offset-3">
-          <h2>Sign Up Form</h2>
+        <div class="col-md-6 col-md-offset-3 z-depth-4">
+          <h5 class="white-text" >Sign Up Form</h5>
           <form class="signup">
             <div class="form-group">
               <label for="exampleInputEmail1">Email address</label>
               <input
                 type="email"
-                class="form-control"
+                class="form-control white-text"
                 id="email-input"
                 placeholder="Email"
               />
@@ -57,7 +84,7 @@
               <label for="exampleInputPassword1">Password</label>
               <input
                 type="password"
-                class="form-control"
+                class="form-control white-text"
                 id="password-input"
                 placeholder="Password"
               />
@@ -74,10 +101,10 @@
               ></span>
               <span class="sr-only">Error:</span> <span class="msg"></span>
             </div>
-            <button type="submit" class="btn btn-default">Sign Up</button>
+            <button type="submit" class="btn btn-default amber-text grey darken-4">Sign Up</button>
           </form>
           <br />
-          <p>Or log in <a href="/">here</a></p>
+          <p class="white-text">Or log in <a href="/">here</a></p>
         </div>
       </div>
     </div>
