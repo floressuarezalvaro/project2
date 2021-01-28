@@ -23,8 +23,8 @@ function fetchSearchLocation(queryString) {
         //create barCards here
 
         let col = $("<div>").addClass("col s12 m4 l4");
-        let card = $("<div>").addClass("card");
-        let body = $("<div>").addClass("card-content");
+        let card = $("<div>").addClass("card grey lighten-5");
+        let body = $("<div>").addClass("card-content grey-text");
         let btn = $("<a>").addClass(
           "btn-floating halfway-fab waves-effect waves-light red"
         );
@@ -37,7 +37,9 @@ function fetchSearchLocation(queryString) {
           .text("State: " + data[i].state);
         let action = $("<div>").addClass("card-action");
         let modal = $("<a>")
-          .addClass("waves-effect waves-light btn modal-trigger")
+          .addClass(
+            "waves-effect waves-light btn modal-trigger amber-text grey darken-3"
+          )
           .attr("data-id", i)
           .attr("href", "#modal1")
           .text("More Details");
@@ -109,6 +111,8 @@ function handleSearchFormSubmit(e) {
 }
 
 searchForm.addEventListener("submit", handleSearchFormSubmit);
+
+$(".dropdown-trigger").dropdown();
 
 // Card Modal Trigger for "More Details" on Explore Page
 
