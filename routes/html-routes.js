@@ -29,4 +29,7 @@ module.exports = (app) => {
   app.get("/updateBar", (req, res) => {
     res.sendFile(path.join(__dirname, "../public/HTML/updateBar.html"));
   });
+  app.get("/deleteBar", (req, res) => {
+    res.sendFile(path.join(__dirname, "../public/HTML/deleteBar.html"));
+  });
 };
