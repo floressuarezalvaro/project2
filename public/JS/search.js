@@ -23,8 +23,8 @@ function fetchSearchLocation(queryString) {
         //create barCards here
 
         let col = $("<div>").addClass("col s12 m4 l4");
-        let card = $("<div>").addClass("card");
-        let body = $("<div>").addClass("card-content");
+        let card = $("<div>").addClass("card grey lighten-5");
+        let body = $("<div>").addClass("card-content grey-text");
         let name = $("<p>").addClass("#bar-name").text(data[i].name);
         let city = $("<p>")
           .addClass("#city-name")
@@ -34,7 +34,9 @@ function fetchSearchLocation(queryString) {
           .text("State: " + data[i].state);
         let action = $("<div>").addClass("card-action");
         let modal = $("<a>")
-          .addClass("waves-effect waves-light btn modal-trigger")
+          .addClass(
+            "waves-effect waves-light btn modal-trigger amber-text grey darken-3"
+          )
           .attr("data-id", i)
           .attr("href", "#modal1")
           .text("More Details");
@@ -70,32 +72,6 @@ $(document).ready(function () {
   });
 });
 
-//  let modalContent = $("<div>").addClass(".modal-content");
-//  let h4 = $("<h4>").text("Popular Brewery Info");
-//  let p1 = $("<p>")
-//    .addClass("#bar-name")
-//    .text("Name: ");// + data[i].name);
-//  let p2 = $("<p>")
-//    .addClass("#address")
-//    .text("Address: "); // + data[i].street);
-//  let p3 = $("<p>")
-//    .addClass("#city-name")
-//    .text("City: ");// + data[i].city);
-//  let p4 = $("<p>")
-//    .addClass("#state")
-//    .text("State: "); // + data[i].state);
-//  let p5 = $("<p>")
-//    .addClass("#review-link")
-//    .text("Reviews: "); // + data[i].reviewlink);
-//  let p6 = $("<p>")
-//    .addClass("#phone")
-//    .text("Phone Number: "); // + data[i].phone);
-//  let p7 = $("<p>")
-//    .addClass("#website")
-//    .text("Website: "); // + data[i].url);
-
-//    modal1.append(modalContent, h4, p1, p2, p3, p4, p5, p6, p7);
-
 function handleSearchFormSubmit(e) {
   e.preventDefault();
   let input = document.querySelector("#search").value;
@@ -106,6 +82,8 @@ function handleSearchFormSubmit(e) {
 }
 
 searchForm.addEventListener("submit", handleSearchFormSubmit);
+
+$(".dropdown-trigger").dropdown();
 
 // Card Modal Trigger for "More Details" on Explore Page
 

@@ -15,3 +15,8 @@ main {
   background-color: lightblue;
   margin-top: 20px;
 }
+
+body {
+  background-image: url("../Assets/images/genericbeer\ copy.png");
+  background-size: cover;
+}
