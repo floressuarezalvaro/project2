@@ -3,9 +3,13 @@ var session = require("express-session");
 var passport = require("./config/passport");
 const db = require("./models");
 require("dotenv").config();
+const mysql = require("mysql");
+var connection;
+
 
 const HOST = process.env.HOST;
 const PORT = process.env.PORT;
+
 
 const app = express();
 app.use(express.urlencoded({ extended: true }));
@@ -27,3 +31,15 @@ db.sequelize.sync().then(() => {
     console.log(`listening at: http://${HOST}:${PORT}`);
   });
 });
+
+const connection = mysql.createConnection(
+  process.env.JAWSDB_URL || {
+    host: "localhost",
+    port: 3306,
+    user: "root",
+    password: "JunieJune548!",
+    database: "burgers_db",
+  }
+);
+
+connection.connect();
